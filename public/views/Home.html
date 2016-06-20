@@ -1,0 +1,86 @@
+<div ng-controller='MainController as vm'>
+  <div class="container">
+    <div id="wrapper">
+      <h1 id="pageHead"> {{nav.status.username.toUpperCase()}}'s Media Library</h1>
+
+
+      <!--=========== ADDITON BUTTONS ===========-->
+      <section id="controls">
+        <!-- Large modal -->
+        <button class="btn btn-primary addBtn" data-toggle="modal" data-target=".bd-movie-modal-lg"><i class="fa fa-plus"></i> Add New Movie</button>
+        <!-- Large Music Modal Btn -->
+        <button class="btn btn-primary addBtn" data-toggle="modal" data-target=".bd-music-modal-lg"><i class="fa fa-plus"></i> Add New Music</button>
+      </section>
+
+
+      <!--============= MOVIE FORM MODAL =============-->
+      <div class="modal fade bd-movie-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <section class="display">
+              <label for="search">Search By Movie or Music Title</label><br>
+              <input type="search" name="search-field" value="">
+              <input type="button" id="goSearchBtn" value="Search">
+          		<br><div id="showHere"></div>
+          	</section><br>
+
+            <button type="button" data-toggle="collapse" data-target="#newMovie" class="btn btn-primary btn-lg btn-block">Add A New Movie</button>
+
+          	<section class="form" id="addMovie">
+          		<form class="inner-form collapse" id="newMovie"action="index.html" method="post">
+          			<label for="movie-photo">Movie Photo Url</label><br>
+          			<input type="text" name="movie-photo" id="movie-photo" value=""><br><br>
+          			<label for="movie-title">Movie Title</label><br>
+          			<input type="text" name="movie-title" id="movie-title" value=""><br><br>
+          			<label for="movie-genre">Movie Genre</label><br>
+          			<input type="text" name="movie-genre" id="movie-genre" value=""><br><br>
+          			<label for="movie-summary">Movie Summary</label><br>
+          			<input type="text" name="movie-summary" id="movie-summary" value=""><br><br>
+          			<button type="button" id="addButton" onclick="addMovie()">Add Movie</button>
+          		</form>
+            </section> <!-- / movie form collapse -->
+          </div>
+        </div>
+      </div>  <!-- / movie modal -->
+
+
+
+
+        <!--============= MUSIC FORM MODAL =============-->
+      <div class="modal fade bd-music-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+
+          <div class="modal-content">
+            <section class="display">
+              <label for="search">Search By Movie or Music Title</label><br>
+              <input type="search" name="search-field" value="">
+              <input type="button" id="goSearchBtn" value="Search">
+          		<br><div id="showHere"></div>
+          	</section><br>
+
+            <!-- toggles music form collapse -->
+            <button type="button" data-toggle="collapse" data-target="#newMusic" class="btn btn-primary btn-lg btn-block">Add New Music</button>
+
+            <!-- music form collapse -->
+            <section class="form" id="addMusic">
+          		<form class="inner-form collapse" id="newMusic"action="index.html" method="post">
+          			<label for="music-photo">Music Photo Url</label><br>
+          			<input type="text" name="music-photo" id="music-photo" value=""><br><br>
+          			<label for="music-title">Music Title</label><br>
+          			<input type="text" name="music-title" id="music-title" value=""><br><br>
+          			<label for="music-genre">Music Genre</label><br>
+          			<input type="text" name="music-genre" id="music-genre" value=""><br><br>
+          			<label for="music-summary">Music Summary</label><br>
+          			<input type="text" name="music-summary" id="music-summary" value=""><br><br>
+          			<button type="button" id="addButton" onclick="addMusic()">Add Music</button>
+          		</form>
+          	</section> <!-- / music form collapse -->
+          </div>
+        </div>
+      </div>  <!-- / music modal -->
+
+
+    </div> <!-- / WRAPPER -->
+  </div>   <!-- / CONTAINER -->
+  <footer>&copy 2016 Phoja Unlimited LLC. All Rights Reserved</footer>
+</div>	<!-- End of MainController -->
